@@ -20,11 +20,9 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import home
 
-from django.contrib import admin
-from django.urls import path
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home, name='home')
-]
+    path('', home, name='home'),
+    path('face_detection/', include('face_detection.urls')),
+    path('number_plate_detection/', include('numberplate_detection.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

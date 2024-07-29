@@ -22,11 +22,17 @@
             <tbody>
                 <tr>
                     <td>Face Detection</td>
-                    <td><a href="">Click Here</a></td>
+                    <td><a href="{% url 'face_detection' %}">Click Here</a></td>
                 </tr>
                 <tr>
                     <td>Number Plate Detection</td>
-                    <td><a href="">Click Here</a></td>
+                    <td>
+                        <a href="
+                        {% url 'number_plate_detection' %}"
+                        >
+                        Click Here
+                        </a>
+                    </td>
                 </tr>
                 <!-- Add more rows as needed -->
             </tbody>
@@ -36,4 +42,6 @@
     <!-- Bootstrap JS and dependencies CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

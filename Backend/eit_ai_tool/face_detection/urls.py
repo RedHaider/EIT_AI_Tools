@@ -7,5 +7,5 @@ from .views import face_detection
 
 
 urlpatterns = [
-    path('/', face_detection, name='face_detection'),
+    path('', face_detection, name='face_detection'),# root of face_detection app
 ]
