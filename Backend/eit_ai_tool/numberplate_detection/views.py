@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import NumberPlateDetection
 from .forms import NumberPlateDetectionForm
+from .serializers import NumberPlateDetectionSerializer, NumberPlateDetectionSerializerTable
+from rest_framework import generics
 
 def number_plate_detection(request):
     if request.method == 'POST':
@@ -19,3 +21,12 @@ def number_plate_detection(request):
             'form': form
         }
     )
+
+class NumberPlateDetectionListCreate(generics.ListCreateAPIView):
+    queryset = NumberPlateDetection.objects.all()
+    serializer_class = NumberPlateDetectionSerializer
+
+
+class NumberPlateDetectionListTable(generics.ListCreateAPIView):
+    queryset = NumberPlateDetection.objects.all()
+    serializer_class = NumberPlateDetectionSerializerTable

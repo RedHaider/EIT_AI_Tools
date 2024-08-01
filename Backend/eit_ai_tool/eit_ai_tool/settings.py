@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'face_detection',
-    'numberplate_detection'
+    'numberplate_detection',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'eit_ai_tool.urls'
@@ -69,6 +72,13 @@ TEMPLATES = [
         },
     },
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # React app URL
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 WSGI_APPLICATION = 'eit_ai_tool.wsgi.application'
 

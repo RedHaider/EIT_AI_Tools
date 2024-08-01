@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# eit_ai_tool/urls.py
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -25,4 +26,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('face_detection/', include('face_detection.urls')),
     path('number_plate_detection/', include('numberplate_detection.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
